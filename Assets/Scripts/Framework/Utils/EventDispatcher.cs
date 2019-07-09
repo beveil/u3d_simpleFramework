@@ -1,9 +1,9 @@
-/*
+﻿/*
  * FileName: EventDispatcher
  * Author: bx
  * CreateTime: 2019-06-28-11:42:09
  * UnityVersion: 2018.4.2f1
- * Description: �¼��ɷ���
+ * Description: 
  * 
 */
 using System;
@@ -14,13 +14,13 @@ using UnityEngine;
 public delegate void EventHandleDel(EventPackage package);
 public class EventDispatcher : Singleton<EventDispatcher>, IEventHandler
 {
-    // �¼��ֵ�
+    // 
     Dictionary<EventType, List<EventHandleDel>> m_EventDic = new Dictionary<EventType, List<EventHandleDel>>();
 
-    #region ���з���
+    #region 
 
     /// <summary>
-    /// �����¼�
+    /// 添加事件监听
     /// </summary>
     /// <param name="eventType"></param>
     /// <param name="del"></param>
@@ -39,7 +39,7 @@ public class EventDispatcher : Singleton<EventDispatcher>, IEventHandler
     }
 
     /// <summary>
-    /// �Ƴ��¼�
+    /// 删除事件监听
     /// </summary>
     /// <param name="eventType"></param>
     /// <param name="del"></param>
@@ -70,6 +70,10 @@ public class EventDispatcher : Singleton<EventDispatcher>, IEventHandler
         m_EventDic.Clear();
     }
 
+    /// <summary>
+    /// 发送事件
+    /// </summary>
+    /// <param name="eventType"></param>
     public void SendEvent(EventType eventType)
     {
         var package = new EventPackage(eventType);
@@ -84,9 +88,9 @@ public class EventDispatcher : Singleton<EventDispatcher>, IEventHandler
 
     #endregion
 
-    #region ˽�з���
+    #region 
     /// <summary>
-    /// �����¼�
+    /// 发送事件
     /// </summary>
     /// <param name="package"></param>
     private void SendEvent(EventPackage package)

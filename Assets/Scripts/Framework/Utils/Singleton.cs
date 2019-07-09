@@ -1,4 +1,4 @@
-/*
+ï»¿/*
  * FileName: Singleton
  * Author: bx
  * CreateTime: 2019-06-28-12:20:17
@@ -11,7 +11,7 @@ using System.Collections.Generic;
 public class Singleton<T> where T : class, new()
 {
     private static T _instance;
-    // ¼ÓËø
+    // åŠ é”
     private static object _lock = new object();
 
     public static T Instance
